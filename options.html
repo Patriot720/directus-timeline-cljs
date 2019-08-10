@@ -1,0 +1,45 @@
+  <form @submit.prevent>
+    <label for="spacing" class="style-3 required">
+      {{ $t("layouts-timeline-date") }}
+    </label>
+    <v-select
+      id="spacing"
+      :value="viewOptions.date || '__none__'"
+      :options="dateOptions"
+      class="select"
+      icon="today"
+      @input="setOption('date', $event)"
+    ></v-select>
+    <label for="spacing" class="style-3 required">
+      {{ $t("layouts-timeline-title") }}
+    </label>
+    <v-input
+      id="spacing"
+      :pattern="titleValidator"
+      :value="viewOptions.title"
+      :options="textOptions"
+      @input="setOption('title', $event)"
+    ></v-input>
+    <label for="spacing" class="style-3 required">
+      {{ $t("layouts-timeline-content") }}
+    </label>
+    <v-select
+      id="spacing"
+      :value="viewOptions.content || '__none__'"
+      :options="contentOptions"
+      class="select"
+      icon="title"
+      @input="setOption('content', $event)"
+    ></v-select>
+    <label for="spacing" class="style-3">
+      {{ $t("layouts-timeline-color") }}
+    </label>
+    <v-select
+      id="spacing"
+      :value="viewOptions.color || '__none__'"
+      :options="textOptions"
+      class="select"
+      icon="color_lens"
+      @input="setOption('color', $event)"
+    ></v-select>
+  </form>
